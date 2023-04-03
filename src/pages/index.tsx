@@ -1,9 +1,10 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Playfair_Display, Raleway } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { Box, Stack } from "@chakra-ui/react";
 import { Nav } from "@/components/Nav";
+import { HomeHero } from "@/components/HomeHero";
 
 export const inter = Inter({ subsets: ["latin"] });
 
@@ -18,9 +19,11 @@ export default function Home() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
       </Head>
       <main>
         <Nav />
+        <HomeHero />
       </main>
     </>
   );

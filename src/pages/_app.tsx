@@ -25,6 +25,10 @@ const theme = extendTheme({
       body: {
         bg: "white",
       },
+      h1: {
+        fontSize: "6rem",
+        fontWeight: "700",
+      },
     },
   },
   config: {},
