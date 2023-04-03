@@ -16,7 +16,7 @@ const theme = extendTheme({
   colors: {
     brand: {
       darkBlue: "#2E5B6F",
-      900: "#1a202c",
+      darkBlueHover: "#1E3E4B",
     },
   },
 

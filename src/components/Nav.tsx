@@ -61,7 +61,13 @@ export function Nav() {
                 bg={"brand.darkBlue"}
                 href={"#"}
                 _hover={{
-                  bg: "brand.darkBlue",
+                  bg: "brand.darkBlueHover",
+                  color: "white",
+                  textDecoration: "none",
+                  transition: "all 0.2s ease-in-out",
+                  cursor: "pointer",
+                  transform: "translateY(-2px)",
+                  boxShadow: "0 0 10px var(--brand-darkBlue);",
                 }}
               >
                 Contact
