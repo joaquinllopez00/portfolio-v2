@@ -21,11 +21,11 @@ import Image from "next/image";
 
 import Logo from "../../public/JL-logo.svg";
 
-export function Nav() {
+export function Nav({ withLinks }: { withLinks?: boolean }) {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <nav className="animate__animated animate__fadeInDown">
+    <nav className="animate__animated animate__fadeInDown animate__delay-3s animate__slow">
       <Box borderBottom={1} borderStyle={"solid"} borderColor={useColorModeValue("gray.200", "gray.900")}>
         <Container maxW={"7xl"}>
           <Flex
@@ -48,31 +48,33 @@ export function Nav() {
               <Image src={Logo} alt="Joaquin Lopez" width={50} height={50} />
             </Flex>
 
-            <Stack flex={{ base: 1, md: 0 }} justify={"flex-end"} align={"center"} direction={"row"} spacing={6}>
-              <Box display={{ md: "block", base: "none" }}>
-                <DesktopNav />
-              </Box>
-              <Button
-                as={"a"}
-                display={{ base: "none", md: "inline-flex" }}
-                fontSize={"sm"}
-                fontWeight={600}
-                color={"white"}
-                bg={"brand.darkBlue"}
-                href={"#"}
-                _hover={{
-                  bg: "brand.darkBlueHover",
-                  color: "white",
-                  textDecoration: "none",
-                  transition: "all 0.2s ease-in-out",
-                  cursor: "pointer",
-                  transform: "translateY(-2px)",
-                  boxShadow: "0 0 10px var(--brand-darkBlue);",
-                }}
-              >
-                Contact
-              </Button>
-            </Stack>
+            {withLinks && (
+              <Stack flex={{ base: 1, md: 0 }} justify={"flex-end"} align={"center"} direction={"row"} spacing={6}>
+                <Box display={{ md: "block", base: "none" }}>
+                  <DesktopNav />
+                </Box>
+                <Button
+                  as={"a"}
+                  display={{ base: "none", md: "inline-flex" }}
+                  fontSize={"sm"}
+                  fontWeight={600}
+                  color={"white"}
+                  bg={"brand.darkBlue"}
+                  href={"mailto:joaquinllopezzz@gmail.com"}
+                  _hover={{
+                    bg: "brand.darkBlueHover",
+                    color: "white",
+                    textDecoration: "none",
+                    transition: "all 0.2s ease-in-out",
+                    cursor: "pointer",
+                    transform: "translateY(-2px)",
+                    boxShadow: "0 0 10px var(--brand-darkBlue);",
+                  }}
+                >
+                  Contact
+                </Button>
+              </Stack>
+            )}
           </Flex>
 
           <Collapse in={isOpen} animateOpacity>

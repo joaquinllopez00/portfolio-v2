@@ -5,10 +5,14 @@ import styles from "@/styles/Home.module.css";
 import { Box, Stack } from "@chakra-ui/react";
 import { Nav } from "@/components/Nav";
 import { HomeHero } from "@/components/HomeHero";
+import Waves from "@/components/Waves";
+import { useState } from "react";
 
 export const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [portfolio, setPortfolio] = useState(false);
+
   return (
     <>
       <Head>
@@ -21,8 +25,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Nav />
+        {portfolio ? <Nav withLinks={true} /> : <Nav />}
         <HomeHero />
+        <Waves />
+
+        <span className="color color--blue color-styles" data-value="1"></span>
+        <span className="color color--orange color-styles" data-value="1"></span>
+        <span className="color color--green color-styles" data-value="1"></span>
+        <span className="color color--white color-styles" data-value="1"></span>
       </main>
     </>
   );
