@@ -8,12 +8,14 @@
 
 /* Waves */
 
-@import url(//fonts.googleapis.com/css?family=Lato:300:400);
-
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
+  min-height: 100vh !important;
+}
+
+.overflow {
+  overflow: hidden;
 }
 
 .header {
@@ -125,11 +127,9 @@ body {
   letter-spacing: 5px;
 }
 .btn--clicked {
-  transition: 0.6s cubic-bezier(0.01, 1.69, 0.99, 0.94);
+  transition: all 0.8s ease;
   padding: 15px 2px;
-  width: 50px;
   color: transparent;
-  z-index: -10;
 }
 
 .color {
@@ -158,19 +158,81 @@ body {
   margin: "2rem";
 }
 
-.color--blue {
+.color--darkBlue {
   background-color: var(--brand-darkBlue);
   transition-delay: 0.25s;
 }
-.color--orange {
+.color--darkBlue-low-opacity {
   background-color: var(--brand-darkBlue-low-opacity);
   transition-delay: 0.5s;
 }
-.color--green {
+.color--lightGrayBlue {
   background-color: var(--brand-lightGray);
   transition-delay: 0.75s;
 }
 .color--white {
-  background-color: var(--brand-darkGray);
+  background-color: var(--brand-darkBlue-low-opacity);
   transition-delay: 1s;
+}
+
+/* End ViewPortFolioButton */
+
+/* PortfolioHeroAnimation */
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+
+body {
+  background: #030321;
+}
+
+.portfolio-styles {
+  width: 960px;
+  height: 300px;
+  margin: 0 auto;
+  transition: 0.6s cubic-bezier(0.01, 1.69, 0.99, 0.94);
+}
+
+svg {
+  display: block;
+  font: 10.5em "Playfair Display", serif;
+}
+
+.text-copy {
+  fill: none;
+  stroke: rgb(0, 0, 0);
+  stroke-dasharray: 6% 29%;
+  stroke-width: 5px;
+  stroke-dashoffset: 0%;
+  animation: stroke-offset 3s infinite linear;
+}
+
+.text-copy:nth-child(1) {
+  stroke: var(--brand-darkBlue);
+  animation-delay: -1;
+}
+
+.text-copy:nth-child(2) {
+  stroke: var(--brand-darkBlue-low-opacity);
+  animation-delay: -2s;
+}
+
+.text-copy:nth-child(3) {
+  stroke: var(--brand-darkBlue);
+  animation-delay: -3s;
+}
+
+.text-copy:nth-child(4) {
+  stroke: var(--brand-darkBlue-low-opacity);
+  animation-delay: -3s;
+}
+
+.text-copy:nth-child(5) {
+  stroke: var(--brand-darkBlue);
+  animation-delay: -3s;
+}
+
+@keyframes stroke-offset {
+  100% {
+    stroke-dashoffset: -35%;
+  }
 }

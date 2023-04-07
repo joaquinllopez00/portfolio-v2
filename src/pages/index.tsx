@@ -1,14 +1,11 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Inter, Playfair_Display, Raleway } from "next/font/google";
-import styles from "@/styles/Home.module.css";
-import { Box, Stack } from "@chakra-ui/react";
+
 import { Nav } from "@/components/Nav";
 import { HomeHero } from "@/components/HomeHero";
 import Waves from "@/components/Waves";
 import { useState } from "react";
-
-export const inter = Inter({ subsets: ["latin"] });
+import ViewPortfolioButton from "../components/ViewPortfolioButton";
+import { Porfolio } from "@/components/Portfolio";
 
 export default function Home() {
   const [portfolio, setPortfolio] = useState(false);
@@ -24,14 +21,23 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <main className="overflow">
         {portfolio ? <Nav withLinks={true} /> : <Nav />}
-        <HomeHero />
-        <Waves />
+        {portfolio ? (
+          <>
+            <Porfolio />
+          </>
+        ) : (
+          <>
+            <HomeHero setPortfolio={setPortfolio} />
+            <Waves flipped={false} />
+          </>
+        )}
 
-        <span className="color color--blue color-styles" data-value="1"></span>
-        <span className="color color--orange color-styles" data-value="1"></span>
-        <span className="color color--green color-styles" data-value="1"></span>
+        {/* Spans for ViewPortfolioButton */}
+        <span className="color color--darkBlue color-styles" data-value="1"></span>
+        <span className="color color--darkBlue-low-opacity color-styles" data-value="1"></span>
+        <span className="color color--lightGrayBlue color-styles" data-value="1"></span>
         <span className="color color--white color-styles" data-value="1"></span>
       </main>
     </>

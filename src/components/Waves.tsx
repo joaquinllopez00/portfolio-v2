@@ -1,6 +1,6 @@
 import { Box } from "@chakra-ui/react";
 
-export default function Waves() {
+export default function Waves({ flipped }: { flipped: any }) {
   return (
     <Box
       position="absolute"
@@ -8,7 +8,8 @@ export default function Waves() {
       left={0}
       right={0}
       zIndex={-1}
-      className="animate__animated animate__fadeIn animate__delay-2s animate__slower"
+      className="animate__animated animate__fadeIn animate__delay-3s animate__slower"
+      {...(flipped && { transform: "rotate(180deg)" })}
     >
       <div>
         <svg

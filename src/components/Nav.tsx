@@ -25,7 +25,7 @@ export function Nav({ withLinks }: { withLinks?: boolean }) {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <nav className="animate__animated animate__fadeInDown animate__delay-3s animate__slow">
+    <nav className={"animate__animated animate__fadeIn animate__delay-3s animate__slower"}>
       <Box borderBottom={1} borderStyle={"solid"} borderColor={useColorModeValue("gray.200", "gray.900")}>
         <Container maxW={"7xl"}>
           <Flex
@@ -230,8 +230,8 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: "About",
-    href: "#about",
+    label: "github",
+    href: "github.com",
     // children: [
     //   {
     //     label: "Explore Design Work",
@@ -246,8 +246,8 @@ const NAV_ITEMS: Array<NavItem> = [
     // ],
   },
   {
-    label: "Portfolio",
-    href: "#portfolio",
+    label: "linkedin",
+    href: "linkedin.com",
   },
   // {
   //   label: "Contact",
